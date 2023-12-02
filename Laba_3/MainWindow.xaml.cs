@@ -28,6 +28,11 @@ namespace Laba_3
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var n = Convert.ToInt32(N.Text);
+            if (n < 5)
+            {
+                MessageBox.Show("N must be >= 5");
+                return;
+            }
             var a = new Quadrilateral[n * 2];
 
             for (int i = 0; i < a.Length; i += 2)
