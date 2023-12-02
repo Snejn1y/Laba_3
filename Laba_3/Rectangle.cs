@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laba_3
 {
-    class Rectangle : Quadrilateral
+    public class Rectangle : Quadrilateral
     {
         public double Length { get; set; }
         public double Width { get; set; }

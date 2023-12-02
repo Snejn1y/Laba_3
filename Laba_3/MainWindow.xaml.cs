@@ -36,15 +36,30 @@ namespace Laba_3
                 a[i + 1] = new Square(i + 2);
             }
 
-            var maxArea = 0.0;
             list.Items.Clear();
             for (int i = 0; i < a.Length; i++)
             {
                 list.Items.Add(a[i].Print() + " Area = " + a[i].CalculateArea().ToString());
-                if (a[i].CalculateArea() > maxArea)
-                    maxArea = a[i].CalculateArea();
             }
-            max.Content = "Max area = " + maxArea.ToString();
+            max.Content = "Max area = " + FindMaxAreaShape(a).CalculateArea().ToString();
+        }
+
+        public static Quadrilateral FindMaxAreaShape(Quadrilateral[] shapes)
+        {
+            Quadrilateral maxAreaShape = null;
+            double maxArea = 0;
+
+            foreach (var shape in shapes)
+            {
+                double area = shape.CalculateArea();
+                if (area > maxArea)
+                {
+                    maxArea = area;
+                    maxAreaShape = shape;
+                }
+            }
+
+            return maxAreaShape;
         }
     }
 }

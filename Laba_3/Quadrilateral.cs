@@ -2,7 +2,7 @@ using System;
 
 namespace Laba_3
 {
-    abstract class Quadrilateral
+    public abstract class Quadrilateral
     {
         public string figura;
         public abstract double CalculateArea();
